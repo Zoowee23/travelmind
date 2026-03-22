@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────
+   THEMES  — each theme sets 8 CSS variables used everywhere in the app
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Light (default) — clean white with soft blue accent ── */
+:root,
+[data-theme="light"] {
+  --bg:           #f0f4ff;   /* very soft lavender-white page bg */
+  --surface:      #ffffff;   /* card / panel bg */
+  --border:       #dde3f0;   /* subtle border */
+  --text:         #1e2340;   /* deep navy text */
+  --muted:        #7b82a0;   /* secondary text */
+  --accent:       #4f6ef7;   /* periwinkle blue */
+  --accent-hover: #3a57e8;
+  --shadow:       rgba(79,110,247,0.12);
+}
+
+/* ── Dark — deep charcoal with violet accent ── */
+.dark,
+[data-theme="dark"] {
+  --bg:           #12131a;
+  --surface:      #1c1e2e;
+  --border:       #2a2d42;
+  --text:         #e8eaf6;
+  --muted:        #8b90b8;
+  --accent:       #7c8cf8;
+  --accent-hover: #6070f0;
+  --shadow:       rgba(124,140,248,0.18);
+}
+
+/* ── Blush — warm rose-pink pastel ── */
+[data-theme="blush"] {
+  --bg:           #fff0f3;
+  --surface:      #ffffff;
+  --border:       #ffd6de;
+  --text:         #3d1a22;
+  --muted:        #b07080;
+  --accent:       #f4607a;
+  --accent-hover: #e04060;
+  --shadow:       rgba(244,96,122,0.15);
+}
+
+/* ── Mint — fresh sage green pastel ── */
+[data-theme="mint"] {
+  --bg:           #edfaf4;
+  --surface:      #ffffff;
+  --border:       #c2edd8;
+  --text:         #0f2e20;
+  --muted:        #5a9070;
+  --accent:       #2dbe7a;
+  --accent-hover: #22a868;
+  --shadow:       rgba(45,190,122,0.15);
+}
+
+/* ── Ocean — deep teal with cyan accent ── */
+[data-theme="ocean"] {
+  --bg:           #e8f4fd;
+  --surface:      #ffffff;
+  --border:       #b8ddf5;
+  --text:         #0a2540;
+  --muted:        #4a7fa0;
+  --accent:       #0ea5e9;
+  --accent-hover: #0284c7;
+  --shadow:       rgba(14,165,233,0.15);
+}
+
+/* ── Lavender — soft purple pastel ── */
+[data-theme="lavender"] {
+  --bg:           #f3f0ff;
+  --surface:      #ffffff;
+  --border:       #ddd5ff;
+  --text:         #1e1040;
+  --muted:        #7060a8;
+  --accent:       #8b5cf6;
+  --accent-hover: #7c3aed;
+  --shadow:       rgba(139,92,246,0.15);
+}
+
+/* ── Sunset — warm amber-peach pastel ── */
+[data-theme="sunset"] {
+  --bg:           #fff8f0;
+  --surface:      #ffffff;
+  --border:       #fde8cc;
+  --text:         #3d1f00;
+  --muted:        #a06030;
+  --accent:       #f97316;
+  --accent-hover: #ea6c0a;
+  --shadow:       rgba(249,115,22,0.15);
+}
+
+/* ── Forest — earthy green dark ── */
+[data-theme="forest"] {
+  --bg:           #eef6ee;
+  --surface:      #ffffff;
+  --border:       #c4dfc4;
+  --text:         #0f2010;
+  --muted:        #4a7050;
+  --accent:       #3a9e5f;
+  --accent-hover: #2d8a50;
+  --shadow:       rgba(58,158,95,0.15);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE
+   ───────────────────────────────────────────────────────────────────────── */
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+  }
+  * { box-sizing: border-box; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   COMPONENTS
+   ───────────────────────────────────────────────────────────────────────── */
+@layer components {
+
+  .nav-link {
+    @apply text-sm px-3 py-1.5 rounded-xl transition-all duration-200;
+    color: var(--muted);
+  }
+  .nav-link:hover {
+    background-color: var(--border);
+    color: var(--text);
+  }
+
+  .btn-primary {
+    @apply font-semibold px-4 py-2 rounded-xl transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed active:scale-95;
+    background-color: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px var(--shadow);
+  }
+
+  .btn-secondary {
+    @apply font-medium px-4 py-2 rounded-xl transition-all duration-200 active:scale-95;
+    background-color: var(--border);
+    color: var(--text);
+  }
+  .btn-secondary:hover { opacity: 0.8; }
+
+  .card {
+    @apply rounded-2xl shadow-sm p-5;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card-hover:hover {
+    box-shadow: 0 8px 28px var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  .input {
+    @apply w-full px-3 py-2.5 rounded-xl transition-all duration-200
+           focus:outline-none focus:ring-2;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    --tw-ring-color: var(--accent);
+  }
+  .input:focus { border-color: var(--accent); }
+
+  .label {
+    @apply block text-sm font-medium mb-1.5;
+    color: var(--muted);
+  }
+
+  .page-enter {
+    animation: fadeUp 0.35s ease both;
+  }
+
+  .skeleton {
+    @apply rounded-xl;
+    background: linear-gradient(90deg, var(--border) 25%, var(--surface) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Accent-tinted badge */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+    background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--accent);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   KEYFRAMES
+   ───────────────────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.float { animation: float 3s ease-in-out infinite; }
