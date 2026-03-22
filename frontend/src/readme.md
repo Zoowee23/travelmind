@@ -1,7 +1,4 @@
-Got you — here’s a **clean, properly formatted, professional README.md** with correct spacing, headings, and Markdown styling.
-You can **copy-paste directly into GitHub** 👇
 
----
 
 # 🌍 **TravelMind AI**
 
@@ -209,28 +206,13 @@ README.md
 
 **Jui Kulkarni**
 
----
 
-## 📜 **License**
+<img width="1344" height="692" alt="image" src="https://github.com/user-attachments/assets/f339df5e-a412-4cdc-9f83-b8d03fb71686" />
+<img width="1366" height="683" alt="image" src="https://github.com/user-attachments/assets/264c8829-956f-4e99-9cd4-b2231d183b6a" />
+<img width="1366" height="683" alt="image" src="https://github.com/user-attachments/assets/85d9cafd-6c3f-41ba-884b-c3c04e6135d7" />
+<img width="1366" height="699" alt="image" src="https://github.com/user-attachments/assets/da39207f-f9f2-4fc0-a456-c14fcbe2dc90" />
 
-MIT License
 
----
 
-# 🔥 FINAL NOTE
 
-👉 After pasting:
 
-* Add screenshots 📸
-* Add YouTube demo 🎥
-* Commit & push
-
----
-
-If you want, I can next:
-
-* ⭐ Add GitHub badges (very pro look)
-* 🎯 Write resume bullet points
-* 💼 Help you present this in interviews
-
-Just tell me 👍
