@@ -161,27 +161,6 @@ Use the following sample input:
 
 ---
 
-## 📸 **Screenshots**
-
-*Add your screenshots here*
-
-```md
-![Dashboard](assets/screenshots/dashboard.png)
-![Planner](assets/screenshots/plan-trip.png)
-![Itinerary](assets/screenshots/itinerary.png)
-```
-
----
-
-## 🎥 **Demo Video**
-
-*Add your demo video link here (YouTube recommended)*
-
-```md
-https://your-video-link
-```
-
----
 
 ## 📂 **Project Structure**
 
